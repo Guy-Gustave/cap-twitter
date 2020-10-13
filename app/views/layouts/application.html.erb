@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>CapTwitter</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +11,17 @@
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <div class="notification is-primary global-notification">
+        <p class="notice"><%= notice %></p>
+      </div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="notification is-danger global-notification">
+          <p class="alert"><%= alert %></p>
+        </div>
+    <% end %>
+  
     <%= yield %>
   </body>
 </html>

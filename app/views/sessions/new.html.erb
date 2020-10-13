@@ -1,0 +1,11 @@
+<div class="p-5 mx-auto signup my-5 border rounded-lg border-info">
+
+
+<%= form_tag('/sessions', method: 'post') do %>
+  <%= label_tag(:username, "Username:") %>
+  <%= text_field_tag(:username) %>
+  <%= submit_tag("Log in" ,class:"btn my-2 btn-info") %>
+<% end %>
+
+<%= link_to  "Sign up", new_user_path %>
+</div> 

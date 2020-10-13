@@ -1,0 +1,24 @@
+<div class="p-5 mx-auto signup my-5 border rounded-lg border-info">
+<%= form_for @user do |f| %>
+    
+    <div class="form-group">
+    <%= f.label :username, "Username"  %><br>
+    <%= f.text_field :username %><br>
+    </div>
+    <div class="form-group">
+     <%= f.label :fullname, "Full name"  %><br>
+    <%= f.text_field :fullname %><br>
+    </div>
+    <div class="form-group">
+    <%= f.label :photo, "Profile photo" %> <br>
+    <%= f.file_field :photo %><br>
+    </div>
+    <div class="form-group">
+    <%= f.label :cover_image, "Cover image" %> <br>
+    <%= f.file_field :cover_image %><br>
+    </div>
+    <%= f.submit "Sign up",class:"btn btn-info" %>
+<% end %>
+
+<%= link_to  "Login", new_session_path %>
+</div> 
