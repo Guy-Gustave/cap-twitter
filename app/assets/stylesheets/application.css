@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+ .signup{
+  width: 50%;
+}
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 6fr; 
+  grid-template-rows: 50px 100%;
+  width: 100%;
+}
+/* icons #38719E */
+/* side bar links #5D7285 */
+/*  side bar top part #1B2A3D*/
+
+.user{
+  background-color: #1B2A3D;
+}
+.side-bar{
+  background-color:#213246 ;
+  height: 100vh;
+}
+.navbar{
+  background-color:#51A5E5 ;
+} 

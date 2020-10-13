@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'hirb'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -48,7 +50,7 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
-  
+
   gem 'rspec'
   gem 'shoulda-matchers'
   # Easy installation and use of web drivers to run system tests with browsers
