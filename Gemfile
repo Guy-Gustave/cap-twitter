@@ -35,6 +35,9 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'database_cleaner'
   gem 'rspec-rails'
+  gem 'launchy'
+  gem 'shoulda-matchers', '~> 4.3'
+
 end
 
 group :development do
