@@ -1,24 +1,59 @@
-<div class="p-5 mx-auto signup my-5 border rounded-lg border-success">
-<%= form_for @user do |f| %>
-    
-    <div class="form-group">
-    <%= f.label :username, "Username"  %><br>
-    <%= f.text_field :username %><br>
+<div class="login-cover text-center">
+  <div class="twitter-logo">
+      <i class="fab fa-twitter fa-3x"></i>
+  </div>
+  <h3>Sign Up to Twitter</h3>
+</div>
+<% if @user.errors.any? %>
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h3><%= pluralize(@user.errors.count, "error") %> prohibited this user to be saved:</h3>
+            <div class="panel-body">
+              <ul>
+                <% @user.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>      
+      </div>
     </div>
-    <div class="form-group">
-     <%= f.label :fullname, "Full name"  %><br>
-    <%= f.text_field :fullname %><br>
-    </div>
-    <div class="form-group">
-    <%= f.label :photo, "Profile photo" %> <br>
-    <%= f.file_field :photo %><br>
-    </div>
-    <div class="form-group">
-    <%= f.label :cover_image, "Cover image" %> <br>
-    <%= f.file_field :cover_image %><br>
-    </div>
-    <%= f.submit "Sign up",class:"btn btn-info" %>
 <% end %>
 
-<%= link_to  "Login", new_session_path %>
-</div> 
+<%= form_for (@user), :url => users_path, :html => {class: "text-center login-form"} do |f| %>
+  <div class="form-label">
+    <%= f.label :username, class: "username-label" %>
+  </div>
+  <div class="form-input">
+    <%= f.text_field :username, class: "username-input", placeholder: "Enter Username" %>
+  </div>
+
+  <div class="form-label">
+    <%= f.label :fullname, class: "Fullname-label" %>
+  </div>
+  <div class="form-input">
+    <%= f.text_field :fullname, class: "Fullname-input", placeholder: "Enter Fullname" %>
+  </div>
+
+  <div class="form-label">
+    <%= f.label :Photo, class: "Photo-label" %>
+  </div>
+  <div class="form-input">
+    <%= f.file_field :Photo, class: "Photo-input text-center" %>
+  </div>
+
+  <div class="form-label">
+    <%= f.label :CoverImage, class: "cover-image-label" %>
+  </div>
+  <div class="form-input">
+    <%= f.file_field :CoverImage, class: "cover-image-input text-center" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Sign Up",  class: "btn btn-primary signup-btn"%>    
+  </div>
+  <%= link_to "Login in to Twitter", login_path %>
+<% end %>

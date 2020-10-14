@@ -1,19 +1,20 @@
 class SessionsController < ApplicationController
 
   def create
-    user = User.find_by(username: params[:username])
+    user = User.find_by(username: params[:session][:username])
     if user
-      session[:current_user] = user.id
-      flash[:notice] = "user successfully Loged in"
-      redirect_to root_path
+      session[:user_id] = user.id
+      flash[:notice] = 'You have successfully logged in'
+      redirect_to root_path(user)
     else
-      flash[:alert] = 'There is no user with that name'
-      render :new
+      flash.now[:alert] = 'There was something wrong with your login information'
+      render 'new'
     end
   end
 
   def destroy
-    session[:current_user] = nil
-    redirect_to new_user_path
+    session[:user_id] = nil
+    flash[:notice] = 'You have logged out'
+    redirect_to root_path
   end
 end

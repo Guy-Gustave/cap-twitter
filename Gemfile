@@ -23,6 +23,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'hirb'
+gem 'bootstrap-sass', '~> 3.3.6'
+
+gem 'mini_racer', platforms: :ruby
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -36,7 +39,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'launchy'
-  gem 'shoulda-matchers', '~> 4.3'
 
 end
 

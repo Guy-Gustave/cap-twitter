@@ -1,19 +1,12 @@
 class FollowingsController < ApplicationController
-  before_action :check_user
+  def create
+    Following.create(Followerid: current_user.id, Followedid: params[:followed_id])
+    redirect_to user_path(params[:followed_id])
+  end
 
-    def followto
-        user=User.find(check_user)
-        @users=user.whotofollow
-    end
-
-    def follow
-        @followings = Following.new(follower_id:check_user,followed_id:params[:user_id])
-        if @followings.save
-            redirect_to root_path
-            flash[:notice] = "you followed"
-        else
-            render :new
-            flash[:alert] = "something went wrong"
-        end
-    end
+  def destroy
+    @followings = Following.find_friend_to_unfollow(current_user.id, params[:followed_id])
+    @followings.destroy
+    redirect_to user_path(params[:followed_id])
+  end
 end

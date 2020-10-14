@@ -1,0 +1,13 @@
+<div class="user_avatar">
+    <%=check_photo(@user)%>
+    <%= @user.fullname %>
+</div>
+
+<div class="user_followers text-center">
+    <p class="bold white"><%= @user.followers.count %><p>
+    <p>Following</p>
+</div>
+<div class="user_followeds text-center">
+    <p class="bold white"><%= @user.followeds.count %><p>
+    <p>Followers</p>
+</div> 

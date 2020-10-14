@@ -1,37 +1,29 @@
 class OpinionsController < ApplicationController
-  before_action :check_user
-  def show
-      @opinions = Opinion.find(params[:id])
-  end
+
+  before_action :authorize, only: [:index]
+
   def index
-      user=User.find(check_user)
-      @opinions= followedopinion(user)
-  end
-  def new
-      @opinion = Opinion.new
+    @opinion = Opinion.new
+    @opinions = Opinion.order('created_at DESC').includes(:author).limit(5)
+    @users = User.all_users(current_user.id).order('created_at DESC')
   end
 
   def create
-      user=User.find(check_user)
-      @opinion=user.opinions.build(opinions_params)
-      if @opinion.save
-          redirect_to root_path
-          flash[:notice] = "your news has been published"
-      else
-          render :new
-          flash[:alert] = "something went wrong"
-      end
+    @opinion = Opinion.new(opinion_params)
+    @opinion.AuthorId = current_user.id
+
+    if @opinion.save
+      flash[:notice] = 'Idea well created'
+      redirect_to root_path
+    else
+      flash[:alert] = 'something went wrong'
+      render 'index'
+    end
   end
 
   private
-  def opinions_params
-      params.require(:opinion).permit(:text)
-  end
 
-  def followedopinion(user)
-      followeds = user.followers.pluck(:followed_id).push(check_user)
-      opinion = opinion.where(author_id: followeds).ordered_by_most_recent
+  def opinion_params
+    params.require(:opinion).permit(:text)
   end
-
-  
 end

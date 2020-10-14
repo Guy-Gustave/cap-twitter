@@ -1,11 +1,20 @@
-<div class="p-5 mx-auto signup my-5 border rounded-lg border-info">
+<div class="login-cover text-center">
+  <div class="twitter-logo">
+      <i class="fab fa-twitter fa-3x"></i>
+  </div>
+  <h3>Log in to Twitter</h3>
+</div>
 
+<%= form_for (:session), :url => login_path, :html => {class: "text-center login-form"} do |f| %>
+  <div class="form-label">
+    <%= f.label :username, class: "username-label" %>
+  </div>
+  <div class="form-input">
+    <%= f.text_field :username, class: "username-input", placeholder: "Enter Username" %>
+  </div>
 
-<%= form_tag('/sessions', method: 'post') do %>
-  <%= label_tag(:username, "Username:") %>
-  <%= text_field_tag(:username) %>
-  <%= submit_tag("Log in" ,class:"btn my-2 btn-info") %>
+  <div class="form-actions">
+    <%= f.submit "Log In",  class: "btn btn-primary login-btn"%>    
+  </div>
+  <%= link_to "Sign up for Twitter", signup_path %>
 <% end %>
-
-<%= link_to  "Sign up", new_user_path %>
-</div> 
