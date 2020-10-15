@@ -22,12 +22,30 @@
         <% Opinion.all.each do |opinion| %>
           <div class="tweet-avatar">
             <div class="picture">
-              <% if opinion.author[:Photo].nil? %>
-                <%= gravatar_for opinion.author, size: 50 %>
+              <% if opinion.auther[:Photo].nil? %>
+                <%= gravatar_for opinion.auther, size: 50 %>
               <% else %>
-                <%= image_tag opinion.author.Photo.thumb.url %>
+                <%= image_tag opinion.auther.Photo.thumb.url %>
               <% end %>
             </div>
+          </div>
+          <div class="tweet-content">
+            <h4><%= opinion.auther.fullname %></h4>
+            <span><%= sanitize opinion.text %></span>
+              <span class="like">
+                <% if opinion.likes.any? { |like| like.user_id == current_user.id }%>
+                  <%= link_to unlike_path(opinion), method: :delete, class: 'user-1' do %>
+                    <i class="fas fa-heart text-danger"></i>
+                  <% end %>
+                <% else %>
+                  <%= link_to like_path(opinion), class: 'user-2' do %>
+                    <i class="fas fa-heart text-white"></i>
+                  <% end %>
+                <% end %>
+                <% if opinion.likes.any? %>
+                  <p><%= "#{pluralize(opinion.likes.size, 'like')}" %></p>
+                <% end %>
+            </span>
           </div>
           <div class="clear"></div>
         <% end %>

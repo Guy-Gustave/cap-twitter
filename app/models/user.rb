@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :opinions, foreign_key: 'auther_id', class_name: 'Opinion'
-
+  has_many :likes, foreign_key: 'user_id', class_name: 'Like'
   has_many :followers,class_name:'Following',foreign_key:'follower_id'
   has_many :followed,class_name:'Following',foreign_key:'followed_id'
 

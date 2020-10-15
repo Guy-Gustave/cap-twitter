@@ -8,7 +8,7 @@ module ApplicationHelper
 
   def check_photo(user)
     if user.Photo.attached?
-      image_tag(user.photo, class: 'img')
+      image_tag(user.Photo, class: 'img')
     else
       content_tag(:div, 'No photo', class: %w[bg_gray circle img-none])
     end

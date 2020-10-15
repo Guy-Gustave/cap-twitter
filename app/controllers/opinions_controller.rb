@@ -9,14 +9,15 @@ class OpinionsController < ApplicationController
   end
 
   def create
-    usr = User.find(check_user)
-    @opinion = usr.opinions.build(opinion_params)
+    @opinion = Opinion.new(opinion_params)
     @opinion.auther_id = current_user.id
 
     if @opinion.save
+      byebug
       flash[:notice] = 'Idea well created'
       redirect_to root_path
     else
+      byebug
       flash[:alert] = 'something went wrong'
       render 'index'
     end
