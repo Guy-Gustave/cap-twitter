@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get '/like/:opinion_id', to: 'likes#create', as: :like
   delete '/unlike/:opinion_id', to: 'likes#destroy', as: :unlike
   resources :users, except: [:new]
+  resources :opinions
 end

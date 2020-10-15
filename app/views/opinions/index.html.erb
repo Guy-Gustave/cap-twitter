@@ -12,20 +12,20 @@
               <p class="text-danger"><%= message %></p>
           <% end %>
         <% end %>
-        <%= form_for @opinion, url: new_opinion_path  do |f| %>
-          <%= f.text_area :text, class: "text-input", placeholder: "Compose new tweet" %>
-          <%= f.submit "Tweet", class: "text-btn" %>
+        <%= form_for @opinion, url: new_opinion_path do |f| %>
+          <%= f.text_area :text, class: "text-input", placeholder: "Compose new Idea" %>
+          <%= f.submit "Save", class: "text-btn" %>
         <% end %>
       </div>
       <div class="tweet-body">
         <p class="tweet-body-header">NEW OPINION</p>
-        <% @opinions.each do |opinion| %>
+        <% Opinion.all.each do |opinion| %>
           <div class="tweet-avatar">
             <div class="picture">
-              <% if opinion.Author[:Photo].nil? %>
-                <%= gravatar_for opinion.Author, size: 50 %>
+              <% if opinion.author[:Photo].nil? %>
+                <%= gravatar_for opinion.author, size: 50 %>
               <% else %>
-                <%= image_tag opinion.Author.Photo.thumb.url %>
+                <%= image_tag opinion.author.Photo.thumb.url %>
               <% end %>
             </div>
           </div>
@@ -38,7 +38,7 @@
         <p>WHO TO FOLLOW</p>
       </div>
       <div class="find-friends">
-        <% @users.each do |user| %>
+        <% User.all.each do |user| %>
           <div class="who-follow-profile">
             <div class="picture">
               <%= link_to user_path(user), class: 'user' do %>

@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
   def authorize
     redirect_to login_path unless logged_in?
   end
+
+  def check_user
+    session[:current_user]
+  end
 end

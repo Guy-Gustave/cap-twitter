@@ -9,8 +9,9 @@ class OpinionsController < ApplicationController
   end
 
   def create
-    @opinion = Opinion.new(opinion_params)
-    @opinion.AuthorId = current_user.id
+    usr = User.find(check_user)
+    @opinion = usr.opinions.build(opinion_params)
+    @opinion.auther_id = current_user.id
 
     if @opinion.save
       flash[:notice] = 'Idea well created'
