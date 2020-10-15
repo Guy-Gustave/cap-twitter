@@ -4,9 +4,9 @@
   <%= render 'navigation' %>
   <div class="main-body">
     <div class="tweets">
-      <p class="tweets-heading">TWEETS</p>
+      <p class="tweets-heading">OPINIONS</p>
       <div class="tweet-form">
-        <p>TWEET SOMETHING</p>
+        <p>WRITE SOMETHING</p>
         <% if @opinion.errors.full_messages.any? %>
           <% @opinion.errors.full_messages.each do |message| %>
               <p class="text-danger"><%= message %></p>

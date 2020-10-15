@@ -4,7 +4,7 @@ class OpinionsController < ApplicationController
 
   def index
     @opinion = Opinion.new
-    @opinions = Opinion.order('created_at DESC').includes(:author).limit(5)
+    @opinions = post_opinions.includes(:auther).limit(5)
     @users = User.all_users(current_user.id).order('created_at DESC')
   end
 
@@ -13,17 +13,18 @@ class OpinionsController < ApplicationController
     @opinion.auther_id = current_user.id
 
     if @opinion.save
-      byebug
       flash[:notice] = 'Idea well created'
       redirect_to root_path
     else
-      byebug
       flash[:alert] = 'something went wrong'
       render 'index'
     end
   end
 
   private
+  def post_opinions
+    @post_opinions ||= Opinion.all.ordered_by_most_recent.includes(:user)
+  end
 
   def opinion_params
     params.require(:opinion).permit(:text)
