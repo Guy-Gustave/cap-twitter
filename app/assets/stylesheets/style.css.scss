@@ -2,10 +2,9 @@
 @import "bootstrap";
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
 
-
 $primary-color-dark: #213246;
-$primary-color: #50A4E2;
-$main-background: #F5F6F8;
+$primary-color: hsl(205, 67%, 57%);
+$main-background: #f5f6f8;
 
 * {
   margin: 0;
@@ -33,15 +32,15 @@ li {
   display: block;
   width: 100%;
   height: 4rem;
-  
 }
-
 
 .login-cover {
   margin-top: 2%;
+
   i {
     color: $primary-color;
   }
+
   h3 {
     font-weight: bolder;
   }
@@ -55,11 +54,11 @@ li {
 .Fullname-label,
 .cover-image-label,
 .Photo-label {
-  background-color: #F5F8FA;
+  background-color: #e4e6e7;
   width: 40%;
   padding-right: 35%;
   margin-bottom: 0;
-  color: #7C7786;
+  color: #7d7a85;
 }
 
 .username-input,
@@ -67,7 +66,7 @@ li {
   width: 40%;
   border: none;
   border-bottom: 1px solid $primary-color;
-  background-color: #E8F0FE;
+  background-color: #eef1f7;
   height: 5rem;
   margin-bottom: 2rem;
 }
@@ -96,6 +95,33 @@ li {
   height: 100vh;
 }
 
+aside {
+  border-left: 2px solid #f1f5f8;
+  padding-left: 2rem;
+
+  .follow-header {
+    padding: 1rem 0 0.5rem 0;
+    border-bottom: 2px solid #e7ebee;
+    margin-bottom: 1rem;
+  }
+
+  .who-follow-profile {
+    margin-bottom: 1rem;
+  }
+
+  .user {
+    display: flex;
+  }
+
+  .photo {
+    border-radius: 50%;
+  }
+
+  .who-follow-profile h6 {
+    padding-left: 1rem;
+  }
+}
+
 .side-nav {
   background-color: $primary-color-dark;
 
@@ -105,17 +131,17 @@ li {
   }
 
   .current-user img {
-   margin: 1rem 0 1rem 2rem;
+    margin: 1rem 0 1rem 2rem;
   }
 
   .current-user h6 {
-   padding: 1.5rem 0 0 1rem;
-   color: #667B90;
+    padding: 1.5rem 0 0 1rem;
+    color: #778ca1;
   }
 
   .follow {
     display: flex;
-    border: 2px solid #16272F;
+    border: 2px solid #1f3641;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -124,7 +150,7 @@ li {
 
   .stats-1 {
     padding-right: 4rem;
-    border-right: 2px solid #16272F;
+    border-right: 2px solid #1d313a;
     height: 45px;
   }
 
@@ -133,13 +159,13 @@ li {
   }
 
   .stat-name {
-    color: #667B90;
+    color: #758ba1;
   }
 
   .stat-no {
     padding-left: 2.5rem;
     margin-bottom: -0.4rem;
-    color:white;
+    color: white;
   }
 
   .side-links {
@@ -149,7 +175,7 @@ li {
 
   .links {
     padding: 1rem 0 1rem 2.5rem;
-    color: #667B90;
+    color: #64788d;
   }
 
   .links i {
@@ -161,7 +187,7 @@ li {
     color: white;
     background-color: $primary-color;
   }
-  
+
   .links-path:hover {
     color: white;
     background-color: $primary-color;
@@ -187,11 +213,9 @@ main {
     display: flex;
     padding-right: 3rem;
   }
+
   li {
     padding: 1.5rem;
-  }
-  i {
-    color: #63758B;
   }
 }
 
@@ -201,7 +225,7 @@ main {
 }
 
 .like p {
-  padding: 0rem 0 0 0.5rem;
+  padding: 0 0 0 0.5rem;
 }
 
 .text-white {
@@ -217,8 +241,9 @@ main {
 
   .tweets-heading {
     padding: 1rem 0 1.5rem 0;
-    border-bottom: 2px solid #E7EBEE;
+    border-bottom: 2px solid #e7ebee;
   }
+
   .tweet-form {
     background-color: white;
     border-radius: 0.5rem;
@@ -235,7 +260,7 @@ main {
     padding: 1rem;
     color: white;
     background-color: $primary-color;
-    border-radius:5px;
+    border-radius: 5px;
     border: none;
   }
 
@@ -248,53 +273,26 @@ main {
   }
 
   .tweet-body-header {
-    border-bottom: 2px solid #E7EBEE;
+    border-bottom: 2px solid #e7ebee;
     padding: 1rem 0 1.5rem 0;
   }
 
   .tweet-avatar {
     float: left;
-    margin:0 1rem 2rem 0;
+    margin: 0 1rem 2rem 0;
   }
 
   .tweet-content span {
     font-size: 1.2rem;
   }
 
-   .tweet-content h4 {
+  .tweet-content h4 {
     font-size: 1.5rem;
     margin-bottom: -0.2rem;
   }
 
- .clear {
-   clear: both;
- }
-}
-
-aside {
-  border-left: 2px solid #E7EBEE;
-  padding-left: 2rem;
-
-  .follow-header {
-    padding: 1rem 0 0.5rem 0;
-    border-bottom: 2px solid #E7EBEE;
-    margin-bottom: 1rem;
-  }
-
-   .who-follow-profile {
-    margin-bottom: 1rem;
-  }
-
-  .user {
-    display: flex;
-  }
-
-  .photo {
-    border-radius: 50%;
-  }
-
-  .who-follow-profile h6 {
-    padding-left: 1rem;
+  .clear {
+    clear: both;
   }
 }
 
@@ -313,7 +311,7 @@ aside {
   }
 
   .user-body-header {
-    border-bottom: 2px solid #E7EBEE;
+    border-bottom: 2px solid #e7ebee;
     padding: 1rem 0 1.5rem 0;
   }
 
@@ -325,28 +323,26 @@ aside {
     margin-right: 10px;
     font-size: 14px;
     display: inline-block;
-    margin:0 1rem 2rem 0;
   }
 
   .user-content span {
     font-size: 1.2rem;
   }
 
-   .user-content h4 {
+  .user-content h4 {
     font-size: 1.5rem;
     margin-bottom: -0.1rem;
   }
 
- .clear {
-   clear: both;
- }
+  .clear {
+    clear: both;
+  }
 }
 
 .user-profile {
-  border-left: 2px solid #E7EBEE;
+  border-left: 2px solid #e7ebee;
 
   .follow-icon {
-    // text-align: center;
     margin: 3rem 0 0 4rem;
     display: flex;
   }
@@ -365,17 +361,17 @@ aside {
     align-items: center;
     justify-content: center;
     margin-top: 3rem;
-    border-top: 1px solid #E2E3E5;
-    border-bottom: 1px solid #E2E3E5;
+    border-top: 1px solid #e5e7ec;
+    border-bottom: 1px solid #eceef1;
   }
 
   .following-stat {
     padding: 0 1rem;
-    border-right: 1px solid #E2E3E5;
-    border-left: 1px solid #E2E3E5;
+    border-right: 1px solid #e2e3e5;
+    border-left: 1px solid #e6e8ec;
   }
 
-  .opinion-stat{
+  .opinion-stat {
     padding-right: 1rem;
   }
 
@@ -398,14 +394,13 @@ aside {
 
   .followers-header {
     padding-top: 3rem;
-    border-bottom: 1px solid #E2E3E5;
+    border-bottom: 1px solid #dfe2e9;
   }
 
   .follower-profile {
     margin-top: 2rem;
     display: flex;
     justify-content: space-between;
-
   }
 
   .follower-avatar {
@@ -420,5 +415,4 @@ aside {
   .follow-icons {
     margin-right: 1rem;
   }
-  
- }
+}
