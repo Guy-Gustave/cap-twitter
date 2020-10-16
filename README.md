@@ -41,13 +41,12 @@
 
 ## Live Demo
 
-[Heroku App Link](https://shrouded-river-43787.herokuapp.com/)
+[Heroku App Link](https://git.heroku.com/cap-twitter.git)
 
 ## screenshots
-### Homepage
-![screenshot](images/homepage.PNG)
-### Userpage
-![screenshot](images/userpage.PNG)
+
+## video description
+https://www.loom.com/share/5f54ab711ba14112ab3710a455a641de
 
 ## Getting Started
 
