@@ -10,7 +10,7 @@ RSpec.describe Opinion, type: :model do
   end
 
   describe 'associations' do
-    it { should belong_to(:auther)}
+    it { should belong_to(:auther) }
     it { should have_many(:likes) }
   end
 end

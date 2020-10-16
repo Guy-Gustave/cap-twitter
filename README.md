@@ -41,7 +41,7 @@
 
 ## Live Demo
 
-[Heroku App Link](https://git.heroku.com/cap-twitter.git)
+[Heroku App Link](https://cap-twitter.herokuapp.com/)
 
 ## screenshots
 

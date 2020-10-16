@@ -1,5 +1,4 @@
 class OpinionsController < ApplicationController
-
   before_action :authorize, only: [:index]
 
   def index
@@ -22,6 +21,7 @@ class OpinionsController < ApplicationController
   end
 
   private
+
   def post_opinions
     @post_opinions ||= Opinion.all.ordered_by_most_recent.includes(:user)
   end
