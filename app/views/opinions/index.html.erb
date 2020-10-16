@@ -21,7 +21,7 @@
         <p class="tweet-body-header">NEW OPINION</p>
         <% Opinion.all.each do |opinion| %>
           <div class="tweet-avatar">
-            <div class="picture">
+            <div class="picture hero-img cover">
               <% if opinion.auther[:Photo].nil? %>
                 <%= check_photo opinion.auther%>
               <% else %>
