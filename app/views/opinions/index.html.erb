@@ -23,9 +23,12 @@
           <div class="tweet-avatar">
             <div class="picture">
               <% if opinion.auther[:Photo].nil? %>
-                <%= gravatar_for opinion.auther, size: 50 %>
+                <%= check_photo opinion.auther%>
               <% else %>
-                <%= image_tag opinion.auther.Photo.thumb.url %>
+                  <div class="picture cover hero-img">
+                  <%= check_cover(@user) %>         
+                </div>
+                <h6><%= user.fullname %></h6>
               <% end %>
             </div>
           </div>
@@ -63,7 +66,7 @@
                 <% unless user[:Photo].nil? %>
                   <%= image_tag user.Photo.thumb.url, class: 'photo' %>
                 <% else %>
-                  <%= gravatar_for user, size: 50 %>
+                  <%= check_photo user %>
                 <% end %>
                 <h6><%= user.fullname %></h6>
               <% end %>
