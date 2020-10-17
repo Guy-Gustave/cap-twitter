@@ -35,10 +35,6 @@
 - Ruby on Rails v6.0.3
 - Gems used for testing: Capybara, Rspec-Rails and Shoulda-matchers
 
-## video
-
-(https://www.loom.com/share/d492e192f11545d5b8d2061de9834554)
-
 ## Live Demo
 
 [Heroku App Link](https://cap-twitter.herokuapp.com/)
@@ -73,7 +69,8 @@ Install gems with:
 Setup database with:
 
 ```Ruby
-   rails db:migrate
+    rails db:create
+    rails db:migrate
 ```
 
 Setup cloudinary:

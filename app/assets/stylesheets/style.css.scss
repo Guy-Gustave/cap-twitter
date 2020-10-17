@@ -31,7 +31,7 @@ li {
 .hero-img img {
   display: block;
   width: 100%;
-  height: 4rem;
+  height: 15rem;
 }
 
 .login-cover {
@@ -50,148 +50,12 @@ li {
   padding-top: 1rem;
 }
 
-.username-label,
-.Fullname-label,
-.cover-image-label,
-.Photo-label {
-  background-color: #e4e6e7;
-  width: 40%;
-  padding-right: 35%;
-  margin-bottom: 0;
-  color: #7d7a85;
-}
-
-.username-input,
-.Fullname-input {
-  width: 40%;
-  border: none;
-  border-bottom: 1px solid $primary-color;
-  background-color: #eef1f7;
-  height: 5rem;
-  margin-bottom: 2rem;
-}
-
-.cover-image-input,
-.Photo-input {
-  margin-left: 30%;
-  margin-bottom: 1rem;
-}
-
-.login-btn,
-.signup-btn {
-  width: 40%;
-  border-radius: 0.5rem;
-  background-color: $primary-color;
-  padding: 1.5rem;
-  font-weight: bolder;
-  margin-bottom: 0.5rem;
-}
-
 // main content
 .main-content {
   display: grid;
   grid-template-columns: 20% 80%;
   grid-gap: 0;
   height: 100vh;
-}
-
-aside {
-  border-left: 2px solid #f1f5f8;
-  padding-left: 2rem;
-
-  .follow-header {
-    padding: 1rem 0 0.5rem 0;
-    border-bottom: 2px solid #e7ebee;
-    margin-bottom: 1rem;
-  }
-
-  .who-follow-profile {
-    margin-bottom: 1rem;
-  }
-
-  .user {
-    display: flex;
-  }
-
-  .photo {
-    border-radius: 50%;
-  }
-
-  .who-follow-profile h6 {
-    padding-left: 1rem;
-  }
-}
-
-.side-nav {
-  background-color: $primary-color-dark;
-
-  .current-user {
-    display: flex;
-    padding: 1rem 0 2rem 1.5rem;
-  }
-
-  .current-user img {
-    margin: 1rem 0 1rem 2rem;
-  }
-
-  .current-user h6 {
-    padding: 1.5rem 0 0 1rem;
-    color: #778ca1;
-  }
-
-  .follow {
-    display: flex;
-    border: 2px solid #1f3641;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-
-  .stats-1 {
-    padding-right: 4rem;
-    border-right: 2px solid #1d313a;
-    height: 45px;
-  }
-
-  .stats-2 {
-    padding-left: 4rem;
-  }
-
-  .stat-name {
-    color: #758ba1;
-  }
-
-  .stat-no {
-    padding-left: 2.5rem;
-    margin-bottom: -0.4rem;
-    color: white;
-  }
-
-  .side-links {
-    padding: 1rem 0 0;
-    width: 100%;
-  }
-
-  .links {
-    padding: 1rem 0 1rem 2.5rem;
-    color: #64788d;
-  }
-
-  .links i {
-    padding-right: 1rem;
-  }
-
-  .active,
-  .links:hover {
-    color: white;
-    background-color: $primary-color;
-  }
-
-  .links-path:hover {
-    color: white;
-    background-color: $primary-color;
-  }
 }
 
 main {
@@ -232,69 +96,6 @@ main {
   color: grey;
 }
 
-.main-body {
-  padding-left: 1rem;
-  display: grid;
-  grid-template-columns: 75% 25%;
-  grid-gap: 0;
-  height: 100vh;
-
-  .tweets-heading {
-    padding: 1rem 0 1.5rem 0;
-    border-bottom: 2px solid #e7ebee;
-  }
-
-  .tweet-form {
-    background-color: white;
-    border-radius: 0.5rem;
-    width: 98%;
-    padding: 1rem;
-  }
-
-  .text-input {
-    width: 100%;
-    padding-left: 0.5rem;
-  }
-
-  .text-btn {
-    padding: 1rem;
-    color: white;
-    background-color: $primary-color;
-    border-radius: 5px;
-    border: none;
-  }
-
-  .tweet-body {
-    margin: 2rem 0;
-    background-color: white;
-    border-radius: 0.5rem;
-    width: 98%;
-    padding: 1rem;
-  }
-
-  .tweet-body-header {
-    border-bottom: 2px solid #e7ebee;
-    padding: 1rem 0 1.5rem 0;
-  }
-
-  .tweet-avatar {
-    float: left;
-    margin: 0 1rem 2rem 0;
-  }
-
-  .tweet-content span {
-    font-size: 1.2rem;
-  }
-
-  .tweet-content h4 {
-    font-size: 1.5rem;
-    margin-bottom: -0.2rem;
-  }
-
-  .clear {
-    clear: both;
-  }
-}
 
 .main-user-body {
   display: grid;
@@ -316,7 +117,6 @@ main {
   }
 
   .user-avatar .cover {
-    float: left;
     width: 46px;
     height: 46px;
     margin-left: 0;
@@ -336,83 +136,5 @@ main {
 
   .clear {
     clear: both;
-  }
-}
-
-.user-profile {
-  border-left: 2px solid #e7ebee;
-
-  .follow-icon {
-    margin: 3rem 0 0 4rem;
-    display: flex;
-  }
-
-  .follow-icon img {
-    padding: 0 2rem;
-    border-radius: 50%;
-  }
-
-  .fa-list {
-    padding-top: 0.3rem;
-  }
-
-  .user-stat {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 3rem;
-    border-top: 1px solid #e5e7ec;
-    border-bottom: 1px solid #eceef1;
-  }
-
-  .following-stat {
-    padding: 0 1rem;
-    border-right: 1px solid #e2e3e5;
-    border-left: 1px solid #e6e8ec;
-  }
-
-  .opinion-stat {
-    padding-right: 1rem;
-  }
-
-  .followed-stat {
-    padding-left: 1rem;
-  }
-
-  .stat-no {
-    text-align: center;
-    font-size: 2rem;
-  }
-
-  .stat-name {
-    font-size: 1.5rem;
-  }
-
-  .followers-section {
-    margin-left: 2rem;
-  }
-
-  .followers-header {
-    padding-top: 3rem;
-    border-bottom: 1px solid #dfe2e9;
-  }
-
-  .follower-profile {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .follower-avatar {
-    display: flex;
-  }
-
-  .follower-avatar img {
-    margin-right: 1rem;
-    border-radius: 50%;
-  }
-
-  .follow-icons {
-    margin-right: 1rem;
   }
 }

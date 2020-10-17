@@ -1,3 +1,27 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
+
+$primary-color-dark: #213246;
+$primary-color: #2d63a1;
+$main-background: #f5f6f8;
+
+
+.login-cover {
+  margin-top: 2%;
+
+  i {
+    color: #2d63a1;
+  }
+
+  h3 {
+    font-weight: bolder;
+  }
+}
+
+.login-form {
+  padding-top: 1rem;
+}

@@ -56,7 +56,7 @@
     </div>
     <aside class="who-follow">
       <div class="follow-header">
-        <p>WHO TO FOLLOW</p>
+        <h3 class= "text-primary">WHO TO FOLLOW</h3>
       </div>
       <div class="find-friends">
         <% User.all.each do |user| %>
@@ -64,11 +64,15 @@
             <div class="picture">
               <%= link_to user_path(user), class: 'user' do %>
                 <% unless user[:Photo].nil? %>
-                  <%= image_tag user.Photo.thumb.url, class: 'photo' %>
+                  <div class = "fol-pro">
+                    <%= image_tag user.Photo.thumb.url, class: 'photo' %>
+                  </div>
                 <% else %>
-                  <%= check_photo user %>
+                  <div class = "fol-pro ">
+                    <%= check_photo user %>
+                  </div>
                 <% end %>
-                <h6><%= user.fullname %></h6>
+                <h6 class = "py-2"><%= user.fullname %></h6>
               <% end %>
             </div>  
           </div>

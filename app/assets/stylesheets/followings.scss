@@ -1,3 +1,83 @@
 // Place all the styles related to the followings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+
+.user-profile {
+  border-left: 2px solid #e7ebee;
+
+  .follow-icon {
+    margin: 3rem 0 0 4rem;
+    display: flex;
+  }
+
+  .follow-icon img {
+    padding: 0 2rem;
+    border-radius: 50%;
+  }
+
+  .fa-list {
+    padding-top: 0.3rem;
+  }
+
+  .user-stat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    border-top: 1px solid #e5e7ec;
+    border-bottom: 1px solid #eceef1;
+  }
+
+  .following-stat {
+    padding: 0 1rem;
+    border-right: 1px solid #e2e3e5;
+    border-left: 1px solid #e6e8ec;
+  }
+
+  .opinion-stat {
+    padding-right: 1rem;
+  }
+
+  .followed-stat {
+    padding-left: 1rem;
+  }
+
+  .stat-no {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .stat-name {
+    font-size: 1.5rem;
+  }
+
+  .followers-section {
+    margin-left: 2rem;
+  }
+
+  .followers-header {
+    padding-top: 3rem;
+    border-bottom: 1px solid #dfe2e9;
+  }
+
+  .follower-profile {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .follower-avatar {
+    display: flex;
+  }
+
+  .follower-avatar img {
+    margin-right: 1rem;
+    border-radius: 50%;
+  }
+
+  .follow-icons {
+    margin-right: 1rem;
+  }
+}

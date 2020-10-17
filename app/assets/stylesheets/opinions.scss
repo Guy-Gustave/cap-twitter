@@ -1,3 +1,176 @@
 // Place all the styles related to the opinions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$primary-color-dark: #213246;
+$primary-color: #2d63a1;
+$main-background: #f5f6f8;
+
+.fol-pro img {
+  display: block;
+  width: 40px;
+}
+
+
+aside {
+  border-left: 2px solid #f1f5f8;
+  padding-left: 2rem;
+
+  .follow-header {
+    padding: 1rem 0 0.5rem 0;
+    border-bottom: 2px solid #e7ebee;
+    margin-bottom: 1rem;
+  }
+
+  .who-follow-profile {
+    margin-bottom: 1rem;
+  }
+
+  .user {
+    display: flex;
+  }
+
+  .photo {
+    border-radius: 50%;
+  }
+
+  .who-follow-profile h6 {
+    padding-left: 1rem;
+  }
+}
+
+.side-nav {
+  background-color: $primary-color-dark;
+
+  .current-user {
+    display: flex;
+    padding: 1rem 0 2rem 1.5rem;
+  }
+
+  .current-user img {
+    margin: 1rem 0 1rem 2rem;
+  }
+
+  .current-user h6 {
+    padding: 1.5rem 0 0 1rem;
+    color: #778ca1;
+  }
+
+  .follow {
+    display: flex;
+    border: 2px solid #1f3641;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .stats-1 {
+    padding-right: 4rem;
+    border-right: 2px solid #1d313a;
+    height: 45px;
+  }
+
+  .stats-2 {
+    padding-left: 4rem;
+  }
+
+  .stat-name {
+    color: #758ba1;
+  }
+
+  .stat-no {
+    padding-left: 2.5rem;
+    margin-bottom: -0.4rem;
+    color: white;
+  }
+
+  .side-links {
+    padding: 1rem 0 0;
+    width: 100%;
+  }
+
+  .links {
+    padding: 1rem 0 1rem 2.5rem;
+    color: #64788d;
+  }
+
+  .links i {
+    padding-right: 1rem;
+  }
+
+  .active,
+  .links:hover {
+    color: white;
+    background-color: $primary-color;
+  }
+
+  .links-path:hover {
+    color: white;
+    background-color: $primary-color;
+  }
+}
+
+
+.main-body {
+  padding-left: 1rem;
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-gap: 0;
+  height: 100vh;
+
+  .tweets-heading {
+    padding: 1rem 0 1.5rem 0;
+    border-bottom: 2px solid #e7ebee;
+  }
+
+  .tweet-form {
+    background-color: white;
+    border-radius: 0.5rem;
+    width: 98%;
+    padding: 1rem;
+  }
+
+  .text-input {
+    width: 100%;
+    padding-left: 0.5rem;
+  }
+
+  .text-btn {
+    padding: 1rem;
+    color: white;
+    background-color: $primary-color;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .tweet-body {
+    margin: 2rem 0;
+    background-color: white;
+    border-radius: 0.5rem;
+    width: 98%;
+    padding: 1rem;
+  }
+
+  .tweet-body-header {
+    border-bottom: 2px solid #e7ebee;
+    padding: 1rem 0 1.5rem 0;
+  }
+
+  .tweet-avatar {
+    float: left;
+    margin: 0 1rem 2rem 0;
+  }
+
+  .tweet-content span {
+    font-size: 1.2rem;
+  }
+
+  .tweet-content h4 {
+    font-size: 1.5rem;
+    margin-bottom: -0.2rem;
+  }
+
+  .clear {
+    clear: both;
+  }
+}

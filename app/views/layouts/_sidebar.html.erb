@@ -1,13 +1,13 @@
 <div class="side-nav">
   <div class="current-user">
-    <div class="picture">
+    <div class="picture fol-pro">
       <% if current_user[:Photo].nil? %>
-        <%= gravatar_for current_user, size: 50 %>
+        <%= check_photo current_user %>
       <% else %>
         <%= image_tag current_user.Photo.thumb.url %>
       <% end %>           
     </div>
-    <h6><%= current_user.fullname.upcase %></h6>
+    <h6><%= current_user.fullname %></h6>
   </div>
   <div class="follow">
     <div class="following-stat-side">
