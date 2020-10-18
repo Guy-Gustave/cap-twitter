@@ -22,4 +22,14 @@ module ApplicationHelper
     @opinions = opinions
     render '/layouts/opinion'
   end
+
+  def follow
+    return if current_user.id == @user.id
+
+    if current_user.followed.any? || current_user.include?(follower) { |person| person.followed_id == @user.id }
+      link_to unfollow_path(@user), method: :delete, class: 'font-unfollow-icon fas fa-minus-circle fa-2x'
+    else
+      link_to follow_path(@user), class: 'font-follow-icon fas fa-plus-circle fa-2x'
+    end
+  end
 end
