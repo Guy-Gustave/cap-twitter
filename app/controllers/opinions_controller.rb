@@ -1,5 +1,5 @@
 class OpinionsController < ApplicationController
-  before_action :authorize, only: [:index]
+  before_action :authorize
 
   def index
     @opinion = Opinion.new
