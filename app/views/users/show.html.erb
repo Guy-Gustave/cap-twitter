@@ -34,8 +34,8 @@
     <div  class="user-profile">
      <div class="profile-container">
         <div class="follow-icon">
-          <% unless current_user.id == @user.id %>
-              <% if current_user.followed.any? { |person| person.followed_id == @user.id }%>
+          <% unless current_user.id == @user.id%>
+              <% if current_user.followed.any? && current_user.followed.exclude?(@followers) { |person| person.followed_id == @user.id }%>
                 <%= link_to unfollow_path(@user), method: :delete, class: "font-unfollow-icon" do %>
                   <i class="fas fa-minus-circle fa-2x"></i>
                 <% end %>
@@ -69,13 +69,13 @@
         <div class="following-stat">
           <div class="stats-1">
             <p class="stat-no"><%= @user.followed.size %></p>
-            <p class="stat-name">Following</p>
+            <p class="stat-name">Followers</p>
           </div>
         </div>
         <div class="followed-stat">
           <div class="stats-3">
             <p class="stat-no"><%= @user.followers.size %></p>
-            <p class="stat-name">Followers</p>
+            <p class="stat-name">Following</p>
           </div>
         </div>
       </div>
