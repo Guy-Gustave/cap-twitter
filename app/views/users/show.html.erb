@@ -1,0 +1,113 @@
+<div class="main-content">
+ <%= render 'layouts/sidebar' %>
+ <main>
+  <%= render 'opinions/navigation' %>
+  <div class="main-user-body">
+    <div class="user-tweet">
+      <div class="hero-img">
+        <% unless @user[:CoverImage].nil? %>
+          <div class="picture cover hero-img">
+            <%= check_cover(@user) %>         
+          </div>
+        <% else %>
+          <img src="https://via.placeholder.com/150" alt="">
+        <% end %>
+      </div>
+      <div class="user-body">
+        <p class="user-body-header">ALL OPINIONS</p>
+        <% @opinions.each do |opinion| %>
+          <div class="user-avatar cover">
+            <div class="picture cover hero-img">
+              <%= check_photo(@user) %>         
+            </div>
+          </div>
+          <div class="user-content">
+            <h4><%= opinion.auther.fullname %></h4>
+            <span><%= opinion.text %></span>
+            <span class="like">
+      
+            <div class="clear"></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div  class="user-profile">
+     <div class="profile-container">
+        <div class="follow-icon">
+          <% unless current_user.id == @user.id %>
+              <% if current_user.followers.any? { |person| person.followed_id == @user.id }%>
+                <%= link_to unfollow_path(@user), method: :delete, class: "font-unfollow-icon" do %>
+                  <i class="fas fa-minus-circle fa-2x"></i>
+                <% end %>
+              <%else%>
+                <%= link_to follow_path(@user), class: "font-follow-icon" do %>
+                  <i class="fas fa-plus-circle fa-2x"></i>
+                <% end %>
+              <% end %>
+          <% end %>
+          <div class="picture hero-img">
+            <% unless @user[:Photo].nil? %>
+              <%= check_photo(@user) %>
+            <% else %>
+              <%= check_photo @user %>
+            <% end %>
+          </div>
+          <i class="fas fa-list fa-lg text-primary pt-2"></i>
+        </div>
+        <div class="profile-details text-center">
+          <h5><%= @user.fullname.upcase %></h5>
+          <h6>@<%= @user.username %></h6>
+        </div> 
+      </div>
+      <div class="user-stat">
+        <div class="opinion-stat">
+          <div class="stats-1">
+            <p class="stat-no"><%= @opinions.size %></p>
+            <p class="stat-name">OPINION</p>
+          </div>
+        </div>
+        <div class="following-stat">
+          <div class="stats-1">
+            <p class="stat-no"><%= @user.followed.size %></p>
+            <p class="stat-name">Following</p>
+          </div>
+        </div>
+        <div class="followed-stat">
+          <div class="stats-3">
+            <p class="stat-no"><%= @user.followers.size %></p>
+            <p class="stat-name">Followers</p>
+          </div>
+        </div>
+      </div>
+      <div class="followers-section">
+        <div class="followers-header">
+          <p>FOLLOWED BY</p>
+        </div>
+        <div class="my-followers">
+            <% @followers.each do |follower| %>
+              <div class="follower-profile">
+                <div class="follower-avatar">
+                  <% unless follower.follower[:Photo].nil? %>
+                    <%= image_tag follower.follower.Photo.thumb.url %>
+                  <% else %>
+                    <%= check_photo follower.follower %>
+                  <% end %>
+                  <h6><%= follower.follower.fullname %></h6>
+                </div>
+                <% if current_user.followers.any? { |person| person.followed_id == follower.follower.id }%>
+                  <%= link_to unfollow_path(follower.followed), method: :delete, class: "follow-icons" do %>
+                      <i class="fas fa-minus-circle fa-2x"></i>
+                  <% end %>
+                <%else%>
+                  <%= link_to follow_path(follower.follower), class: "follow-icons" do %>
+                    <i class="fas fa-plus-circle fa-2x"></i>
+                  <% end %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+      </div>
+    </div>
+  </div>
+ </main>
+</div>

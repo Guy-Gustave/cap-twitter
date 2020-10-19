@@ -1,0 +1,48 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
+
+$primary-color-dark: #213246;
+$primary-color: hsl(205, 67%, 57%);
+$main-background: #f5f6f8;
+
+.username-label,
+.Fullname-label,
+.cover-image-label,
+.Photo-label {
+  background-color: #e4e6e7;
+  width: 40%;
+  padding-right: 35%;
+  margin-bottom: 0;
+  color: #7d7a85;
+}
+
+.username-input,
+.Fullname-input {
+  width: 40%;
+  border: none;
+  border-bottom: 1px solid $primary-color;
+  background-color: #eef1f7;
+  height: 5rem;
+  margin-bottom: 2rem;
+}
+
+.cover-image-input,
+.Photo-input {
+  margin-left: 30%;
+  margin-bottom: 1rem;
+}
+
+.login-btn,
+.signup-btn {
+  width: 40%;
+  border-radius: 0.5rem;
+  background-color: $primary-color;
+  padding: 1.5rem;
+  font-weight: bolder;
+  margin-bottom: 0.5rem;
+}

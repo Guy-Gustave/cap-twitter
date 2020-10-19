@@ -1,0 +1,9 @@
+
+<div class="p-5 mx-auto signup my-5 border rounded-lg border-info">
+<%= form_for @opinion do |f| %>
+    <div class="form-group">
+    <%= f.text_area :text %><br>
+    </div>
+    <%= f.submit "Send",class:"btn btn-info" %>
+<% end %>
+</div> 

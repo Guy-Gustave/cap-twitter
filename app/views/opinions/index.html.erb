@@ -1,0 +1,84 @@
+<div class="main-content">
+ <%= render '/layouts/sidebar' %>
+ <main>
+  <%= render 'navigation' %>
+  <div class="main-body">
+    <div class="tweets">
+      <p class="tweets-heading">OPINIONS</p>
+      <div class="tweet-form">
+        <p>WRITE SOMETHING</p>
+        <% if @opinion.errors.full_messages.any? %>
+          <% @opinion.errors.full_messages.each do |message| %>
+              <p class="text-danger"><%= message %></p>
+          <% end %>
+        <% end %>
+        <%= form_for @opinion, url: new_opinion_path do |f| %>
+          <%= f.text_area :text, class: "text-input", placeholder: "Compose new Idea" %>
+          <%= f.submit "Save", class: "text-btn" %>
+        <% end %>
+      </div>
+      <div class="tweet-body">
+        <p class="tweet-body-header">NEW OPINION</p>
+        <% Opinion.all.each do |opinion| %>
+          <div class="tweet-avatar">
+            <div class="picture hero-img cover">
+              <% if opinion.auther[:Photo].nil? %>
+                <%= check_photo opinion.auther%>
+              <% else %>
+                  <div class="picture cover hero-img">
+                  <%= check_cover(@user) %>         
+                </div>
+                <h6><%= user.fullname %></h6>
+              <% end %>
+            </div>
+          </div>
+          <div class="tweet-content">
+            <h4><%= opinion.auther.fullname %></h4>
+            <span><%= sanitize opinion.text %></span>
+              <span class="like">
+                <% if opinion.likes.any? { |like| like.user_id == current_user.id }%>
+                  <%= link_to unlike_path(opinion), method: :delete, class: 'user-1' do %>
+                    <i class="fas fa-heart text-danger"></i>
+                  <% end %>
+                <% else %>
+                  <%= link_to like_path(opinion), class: 'user-2' do %>
+                    <i class="fas fa-heart text-white"></i>
+                  <% end %>
+                <% end %>
+                <% if opinion.likes.any? %>
+                  <p><%= "#{pluralize(opinion.likes.size, 'like')}" %></p>
+                <% end %>
+            </span>
+          </div>
+          <div class="clear"></div>
+        <% end %>
+      </div>
+    </div>
+    <aside class="who-follow">
+      <div class="follow-header">
+        <h3 class= "text-primary">WHO TO FOLLOW</h3>
+      </div>
+      <div class="find-friends">
+        <% User.all.each do |user| %>
+          <div class="who-follow-profile">
+            <div class="picture">
+              <%= link_to user_path(user), class: 'user' do %>
+                <% unless user[:Photo].nil? %>
+                  <div class = "fol-pro">
+                    <%= image_tag user.Photo.thumb.url, class: 'photo' %>
+                  </div>
+                <% else %>
+                  <div class = "fol-pro ">
+                    <%= check_photo user %>
+                  </div>
+                <% end %>
+                <h6 class = "py-2"><%= user.fullname %></h6>
+              <% end %>
+            </div>  
+          </div>
+        <% end %>
+      </div>
+    </aside>
+  </div> 
+ </main>
+</div>

@@ -1,0 +1,5 @@
+
+<% @users.each do |user| %>
+<%= user.fullname%>
+ <%= link_to "follow", follow_path(user_id:user.id),class:"btn btn-info" %>
+<%end%> 

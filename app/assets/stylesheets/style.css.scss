@@ -1,0 +1,131 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
+
+$primary-color-dark: #213246;
+$primary-color: hsl(205, 67%, 57%);
+$main-background: #f5f6f8;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+li {
+  list-style: none;
+}
+
+.hero-img {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-img img {
+  display: block;
+  width: 100%;
+  height: 15rem;
+}
+
+.login-cover {
+  margin-top: 2%;
+
+  i {
+    color: $primary-color;
+  }
+
+  h3 {
+    font-weight: bolder;
+  }
+}
+
+.login-form {
+  padding-top: 1rem;
+}
+
+// main content
+.main-content {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-gap: 0;
+  height: 100vh;
+}
+
+main {
+  background-color: $main-background;
+}
+
+#logo {
+  color: white;
+  padding: 1.5rem 0 1.5rem 1.5rem;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  background-color: $primary-color;
+  height: 5rem;
+
+  ul {
+    display: flex;
+    padding-right: 3rem;
+  }
+
+  li {
+    padding: 1.5rem;
+  }
+}
+
+.like {
+  display: flex;
+  padding: 2rem;
+}
+
+.main-user-body {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-gap: 0;
+  height: 100vh;
+
+  .user-body {
+    margin: 2rem 0 0 2rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .user-body-header {
+    border-bottom: 2px solid #e7ebee;
+    padding: 1rem 0 1.5rem 0;
+  }
+
+  .user-avatar .cover {
+    width: 46px;
+    height: 46px;
+    margin-left: 0;
+    margin-right: 10px;
+    font-size: 14px;
+    display: inline-block;
+  }
+
+  .user-content span {
+    font-size: 1.2rem;
+  }
+
+  .user-content h4 {
+    font-size: 1.5rem;
+    margin-bottom: -0.1rem;
+  }
+
+  .clear {
+    clear: both;
+  }
+}

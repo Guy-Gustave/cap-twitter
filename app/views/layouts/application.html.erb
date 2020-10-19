@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CapTwitter</title>
+    <title>TwitterRedesign</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"/>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <div>
+        <p class="notice text-center text-success"><%= notice %></p>
+      </div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div>
+          <p class="alert text-center text-danger"><%= alert %></p>
+        </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

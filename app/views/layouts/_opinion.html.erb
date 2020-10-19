@@ -1,0 +1,12 @@
+
+<% @opinions.each do |o| %>
+<div class="post_card">
+<div class="avatar">
+<%= check_photo(opinion.auther) %>
+</div>
+<div>
+ <%= link_to  opinion.author.fullname, user_path(opinion.auther),class:"bold"  %>
+<p><%= opinion.text%></p>
+</div>
+</div>
+<%end%>
