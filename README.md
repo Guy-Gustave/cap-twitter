@@ -37,7 +37,7 @@
 
 ## Live Demo
 
-[Heroku App Link](https://cap-twitter.herokuapp.com/)
+[Heroku App Link](https://cap-twitter.herokuapp.com/login)
 
 ## screenshots
 
