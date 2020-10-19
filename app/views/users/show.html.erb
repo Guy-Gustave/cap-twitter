@@ -34,12 +34,12 @@
     <div  class="user-profile">
      <div class="profile-container">
         <div class="follow-icon">
-          <% unless current_user.id == @user.id%>
-              <% if current_user.followed.any? && current_user.followed.exclude?(@followers) { |person| person.followed_id == @user.id }%>
+          <% unless current_user.id == @user.id %>
+              <% if current_user.followers.any? { |person| person.followed_id == @user.id }%>
                 <%= link_to unfollow_path(@user), method: :delete, class: "font-unfollow-icon" do %>
                   <i class="fas fa-minus-circle fa-2x"></i>
                 <% end %>
-              <%elsif followed.include?(follower) && (follower.id != id)%>
+              <%else%>
                 <%= link_to follow_path(@user), class: "font-follow-icon" do %>
                   <i class="fas fa-plus-circle fa-2x"></i>
                 <% end %>
@@ -69,13 +69,13 @@
         <div class="following-stat">
           <div class="stats-1">
             <p class="stat-no"><%= @user.followed.size %></p>
-            <p class="stat-name">Followers</p>
+            <p class="stat-name">Following</p>
           </div>
         </div>
         <div class="followed-stat">
           <div class="stats-3">
             <p class="stat-no"><%= @user.followers.size %></p>
-            <p class="stat-name">Following</p>
+            <p class="stat-name">Followers</p>
           </div>
         </div>
       </div>
@@ -94,8 +94,8 @@
                   <% end %>
                   <h6><%= follower.follower.fullname %></h6>
                 </div>
-                <% if current_user.followed.any? { |person| person.followed_id == follower.follower.id }%>
-                  <%= link_to unfollow_path(follower.follower), method: :delete, class: "follow-icons" do %>
+                <% if current_user.followers.any? { |person| person.followed_id == follower.follower.id }%>
+                  <%= link_to unfollow_path(follower.followed), method: :delete, class: "follow-icons" do %>
                       <i class="fas fa-minus-circle fa-2x"></i>
                   <% end %>
                 <%else%>

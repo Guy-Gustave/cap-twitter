@@ -32,4 +32,15 @@ module ApplicationHelper
       link_to follow_path(@user), class: 'font-follow-icon fas fa-plus-circle fa-2x'
     end
   end
+
+  def followingstate(follower, id)
+    if current_user.followed.exclude?(follower) && (follower.id != id)
+      link_to '', follow_path(@user), method: :post,
+                                                         class: 'fas fa-plus middle follostate myplus', id: 'follow_id'
+    elsif user.followed.include?(follower) && (follower.id != id)
+      link_to '', unfollow_path(id: follower.id), method: :delete,
+                                                   class: 'far fa-times-circle middle follostate myunfollow',
+                                                   id: 'unfollow_id'
+    end
+  end
 end
